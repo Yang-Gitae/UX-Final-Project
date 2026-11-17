@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#192e2a" />
+  <meta name="description" content="A friendly voice, text, and tap-enabled campus coffee ordering experience." />
+  <title>Little Bean — Your coffee, your way</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conversation">Skip to ordering conversation</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Little Bean home">
+        <span class="brand-mark" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 32 32" fill="none"><path d="M8 11c0-4.4 4-7.5 8-7.5S24 6.6 24 11c0 5-4.2 13.6-8 17-3.8-3.4-8-12-8-17Z" fill="currentColor"/><path d="M17.5 7.2c-6.2 7.1-5.2 10.9-2.6 16" stroke="#f8f4e9" stroke-width="2.1" stroke-linecap="round"/></svg></span>
+        <span>little<span class="brand-accent">bean</span><span class="brand-dot">.</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="#menu">Our menu</a><a href="#how-it-works">How it works</a></nav>
+      <div class="nav-right"><span class="location-pill"><span class="location-dot"></span> Campus pickup</span><span class="header-icon" aria-hidden="true">✦</span></div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR DAILY CUP, SIMPLIFIED</div><h1 id="page-title">Good coffee.<br/><em>Zero fuss.</em></h1><p>Say it, type it, or tap your way to your perfect drink. Beanie's here to make ordering a little brighter.</p><div class="intro-benefits"><span>✦ No account needed</span><span>✦ Made for busy days</span></div></div>
+        <div class="intro-decoration" aria-hidden="true"><span class="decoration-word">made with care</span><div class="hero-orbit"><span class="hero-star star-a">✳</span><span class="hero-star star-b">✴</span><span class="hero-star star-c">✦</span><div class="hero-cup"><div class="hero-foam"></div><div class="hero-face"><span class="hero-eye"></span><span class="hero-eye"></span><span class="hero-smile"></span></div><div class="hero-handle"></div></div></div><span class="hero-caption">every sip counts <span>↗</span></span></div>
+      </section>
+
+      <section class="workspace" aria-label="Coffee ordering workspace">
+        <aside class="menu-panel" id="menu" aria-labelledby="menu-heading">
+          <div class="panel-heading"><span class="section-index">01 / THE GOOD STUFF</span><h2 id="menu-heading">What sounds good?</h2><p>Pick a favourite to start. Order as many as you like.</p></div>
+          <div class="menu-items" id="menu-items"></div>
+          <div class="menu-footnote"><span class="sparkle">✳</span> All drinks are made just for you.</div>
+        </aside>
+
+        <section class="conversation-panel" id="conversation" aria-labelledby="conversation-heading">
+          <div class="conversation-header"><div><span class="section-index">02 / YOUR PERSONAL BARISTA</span><h2 id="conversation-heading">Let's make your drink.</h2></div><button type="button" class="icon-button" id="help-button" aria-label="How ordering works" title="How ordering works">?</button></div>
+          <div class="avatar-area"><div class="avatar-stage" id="avatar-stage" data-state="idle"><div class="avatar-halo"></div><div class="avatar-spark left">✦</div><div class="avatar-spark right">✳</div><div class="avatar" role="img" aria-label="Beanie, a friendly animated coffee cup"><div class="steam s1"></div><div class="steam s2"></div><div class="steam s3"></div><div class="cup-lid"></div><div class="cup-body"><div class="cup-sleeve"></div><div class="cup-eyes"><span></span><span></span></div><div class="cup-mouth"></div><div class="cup-cheek cheek-left"></div><div class="cup-cheek cheek-right"></div></div></div></div><div class="avatar-intro"><strong>Meet Beanie <span aria-hidden="true">✴</span></strong><span id="avatar-status" class="avatar-status" aria-live="polite"><span class="status-indicator"></span> Ready to help</span></div></div>
+          <div class="chat-box"><div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Ordering conversation"></div><div id="quick-replies" class="quick-replies" aria-label="Suggested answers"></div></div>
+          <div id="voice-preview" class="voice-preview hidden" aria-live="polite"><div><span class="voice-preview-label" id="voice-label">I HEARD</span><p id="voice-transcript"></p></div><div class="voice-preview-actions" id="voice-actions"><button type="button" id="voice-retry" class="text-button">Retry</button><button type="button" id="voice-edit" class="text-button">Edit text</button><button type="button" id="voice-accept" class="small-primary">Use this</button></div></div>
+          <form class="composer" id="composer" autocomplete="off"><label for="message-input" class="sr-only">Type your coffee order or answer</label><input id="message-input" type="text" placeholder="Type your order or reply here…" maxlength="250"/><button type="button" id="mic-button" class="mic-button" aria-label="Start voice input" aria-pressed="false" title="Speak your answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4m-4 0h8"/></svg></button><button type="submit" class="send-button" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 14-8-4 16-3-6-7-2Z"/><path d="m12 14 7-10"/></svg></button></form>
+          <div class="conversation-controls"><div class="controls-left"><button type="button" id="back-button" class="control-button">↶ <span>Back</span></button><button type="button" id="change-button" class="control-button">✎ <span>Change answer</span></button></div><div class="controls-right"><button type="button" id="mute-button" class="control-button" aria-pressed="false">◌ <span>Voice off</span></button><button type="button" id="reset-button" class="control-button reset-button">↻ <span>Start over</span></button></div></div>
+          <p class="accessibility-note" id="access-note">Accessible by voice, keyboard, or touch. Microphone use is optional.</p>
+        </section>
+
+        <aside class="summary-panel" aria-labelledby="summary-heading"><div class="summary-top"><span class="section-index">03 / LOOKING GOOD</span><h2 id="summary-heading">Your order <span class="cart-emoji" aria-hidden="true">✳</span></h2><p>Everything in one happy place.</p></div><div id="order-summary" class="order-summary" aria-live="polite"></div><div class="summary-total"><div><span>Estimated total</span><strong id="total-price">$0.00</strong></div><small>Prices are for this prototype only. No payment is collected.</small></div><button type="button" class="checkout-button" id="review-button" disabled>Review my order <span aria-hidden="true">→</span></button><div class="privacy-note"><span aria-hidden="true">♧</span> Just your first name. No accounts, no card details.</div></aside>
+      </section>
+      <section class="bottom-note" id="how-it-works"><span>✳</span><div><strong>Made for real life.</strong><p>Change your mind anytime. We'll keep the details you've already given.</p></div><span class="bottom-note-right">SMALL MOMENTS, BIG SMILES.</span></section>
+    </main>
+    <footer>Little Bean <span>© 2026 · A UX student prototype · Fictional coffee shop</span><span>Crafted with care ♡</span></footer>
+  </div>
+
+  <dialog id="edit-dialog" class="dialog"><form class="dialog-shell" id="edit-form" novalidate><div class="dialog-title"><div><span class="section-index">MAKE IT YOURS</span><h2>Edit your order</h2></div><button type="button" id="close-edit" class="dialog-close" aria-label="Close editor">×</button></div><p class="dialog-description">Change any drink or pickup detail without starting again.</p><div class="edit-sections" id="edit-fields"></div><p id="edit-error" class="form-error" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-edit" class="secondary-btn">Cancel</button><button type="submit" class="primary-btn">Save changes →</button></div></form></dialog>
+  <dialog id="confirm-dialog" class="dialog"><div class="dialog-shell"><div class="dialog-title"><div><span class="section-index">ONE LAST LOOK</span><h2>Everything look right?</h2></div><button type="button" id="close-confirm" class="dialog-close" aria-label="Close review">×</button></div><div id="confirm-content"></div><div class="dialog-actions"><button type="button" class="secondary-btn" id="confirm-edit">Make changes</button><button type="button" class="primary-btn" id="place-order">Confirm my order →</button></div></div></dialog>
+  <dialog id="success-dialog" class="dialog"><div class="dialog-shell success-shell"><div class="success-icon" aria-hidden="true">✓</div><span class="section-index">YOU DID IT!</span><h2>It's a coffee date.</h2><p>Your prototype order is confirmed. This is a demo — no real order has been sent to a shop.</p><div class="order-code" id="order-code"></div><div id="success-summary" class="success-summary"></div><button type="button" class="primary-btn" id="new-order">Make another order →</button></div></dialog>
+  <dialog id="help-dialog" class="dialog"><div class="dialog-shell"><div class="dialog-title"><div><span class="section-index">THE EASY WAY</span><h2>How to order</h2></div><button type="button" id="close-help" class="dialog-close" aria-label="Close help">×</button></div><p>Choose a drink on the left, type a message, or press the microphone. You can even say “Two large iced oat-milk lattes and a small mocha” to fill several details, and several drinks, at once.</p><p>Beanie asks only for missing details. Tap any option, edit your answers, or go back whenever you like. Voice is optional, and spoken input is shown for review before it's used.</p><p>When every detail is in, Beanie reads your order back. Say or type “yes” to place it, or tell Beanie what to change. You can also use Review my order. Everything here is a local demonstration with no real checkout or payment.</p><button type="button" class="primary-btn" id="help-ok">Got it →</button></div></dialog>
+  <script src="app.js" defer></script>
+</body>
+</html>
